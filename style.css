@@ -54,7 +54,8 @@ table {
 }
 
 .form-control {
-    font-size: 30px;
+    font-size: 16px;
+    padding: 10px 0 10px 10px;
     
 
 }
@@ -107,9 +108,28 @@ th {
     padding: 10px;
 
 }
+tr {
+
+    align-items: 20px;
+}
+
+td {
+    padding-top: 10px;
+    padding-left: 80px;
+    align-content: center;
+}
+
 
 
 .d-btn {
-    background-color: red;
+    border: none;
+    background-color: #bb0a1e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
+.d-btn:hover {
+    background-color: #8b0000;
+    transition: background-color 1s ease; 
+}

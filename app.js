@@ -35,13 +35,19 @@ class UI {
             const row = document.createElement('tr')
 
             row.innerHTML = `
-                <td style="padding: 30px;">${book.name}</td>
+                <td>${book.name}</td>
                 <td>${book.author}</td>
                 <td>${book.status}</td>
-                <td><a href="#" class="d-btn"><button>Delete</button</a></td>
+                <td><button class= "d-btn">Delete</button></td>
             `
 
             list.appendChild(row)
+        }
+
+        static deleteBook(el) {
+            if(el.classList.contains('d-btn')) {
+                el.parentElement.parentElement.remove()
+            }
         }
 
         static clearFields() {
@@ -80,3 +86,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 document.addEventListener('DOMContentLoaded', UI.displayBooks)
 
 //Event: Remove book
+document.querySelector('#book-list').addEventListener('click', (e) => {
+    UI.deleteBook(e.target)
+})
