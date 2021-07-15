@@ -8,6 +8,45 @@
     <title>My Local Book Library</title>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Book Library</h1>
+            <p>The Odion Project on book library using classes and local storage.</p>
+        </header>
+        <div class="main-container">
+            <div class="left">
+                <form id="book-form">
+                    <div class="form-group">
+                        <label for="book" class= "label">Book</label>
+                        <input type="text" id="book" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="author" class= "label">Author</label>
+                        <input type="text" id="author" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <select name="status" id="status">
+                            <option value="read">Read</option>
+                            <option value="not-read">Not read</option>
+                        </select>
+                    </div>
+                    <input type="submit" class="s-btn" value="Add Book">
+                </form>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-list"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
     
 </body>
 </html>
