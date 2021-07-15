@@ -101,3 +101,15 @@ table {
     margin-left: 50px;
     padding: 10px;
 }
+
+th {
+    border-bottom: 1px solid #C9C9C9;
+    padding: 10px;
+
+}
+
+
+.d-btn {
+    background-color: red;
+}
+
