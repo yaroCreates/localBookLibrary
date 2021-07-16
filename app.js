@@ -11,8 +11,7 @@ class Book {
 
 class UI {
     static displayBooks() {
-        const StoredBooks = Store.getBooks
-        const books = StoredBooks
+        const books = Store.getBooks()
 
         books.forEach((book) => UI.addBookToList(book))
         }
@@ -49,11 +48,13 @@ class UI {
 class Store {
     static getBooks() {
         let books
-        if(localStorage.getItem('books')=== null) {
+        if(localStorage.getItem('books') === null) {
             books = []
         } else {
             books = JSON.parse(localStorage.getItem('books'))
         }
+
+        return books 
     }
 
     static addBook(book) {
@@ -71,6 +72,8 @@ class Store {
                 books.splice(index, 1)
             }
         })
+
+        localStorage.setItem('books', JSON.stringify(books))
 
     }
 }
@@ -105,7 +108,10 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 //Event: Display book
 document.addEventListener('DOMContentLoaded', UI.displayBooks)
 
-//Event: Remove book
 document.querySelector('#book-list').addEventListener('click', (e) => {
+    //Event: Remove book from UI
     UI.deleteBook(e.target)
+
+    // Remove book from local store
+    Store.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
 })
